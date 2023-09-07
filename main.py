@@ -42,7 +42,7 @@ tags_metadata = [
 
 app = FastAPI(openapi_tags=tags_metadata)
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
+# oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
 @app.get("/")
 def read_root():
@@ -75,7 +75,7 @@ def read_root():
 # ACCESS_TOKEN_EXPIRE_MINUTES = 60
 
 
-pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
+# pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
 
