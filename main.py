@@ -49,16 +49,16 @@ def read_root():
     return {"message": "Server is up and running!"}
 
 
-@app.post('/register/', response_model=SchemaUser, tags=["User"])
-async def register(user: UserRegister, db: Session = Depends(create_get_session)):
-    user = ModelUser(
-        username=user.username,
-        password=get_password_hash(user.password),
-        email=user.email,
-    )
-    db.add(user)
-    db.commit()
-    return user
+# @app.post('/register/', response_model=SchemaUser, tags=["User"])
+# async def register(user: UserRegister, db: Session = Depends(create_get_session)):
+#     user = ModelUser(
+#         username=user.username,
+#         password=get_password_hash(user.password),
+#         email=user.email,
+#     )
+#     db.add(user)
+#     db.commit()
+#     return user
 
 app.add_middleware(
     CORSMiddleware,
@@ -84,8 +84,8 @@ pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 #     return pwd_context.verify(plain_password, hashed_password)
 
 
-def get_password_hash(password):
-    return pwd_context.hash(password)
+# def get_password_hash(password):
+#     return pwd_context.hash(password)
 
 
 # def get_user(db, username: str):
