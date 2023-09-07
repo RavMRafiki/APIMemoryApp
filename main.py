@@ -40,7 +40,9 @@ tags_metadata = [
     },
 ]
 
-app = FastAPI(openapi_tags=tags_metadata)
+app = FastAPI(
+    # openapi_tags=tags_metadata
+    )
 
 # oauth2_scheme = OAuth2PasswordBearer(tokenUrl='token')
 
